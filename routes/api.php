@@ -10,8 +10,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/posts/{id}', [PostController::class,'post']);
     Route::post('/posts/store', [PostController::class,'store']);
     Route::get('/logout', [AuthController::class,'logout']);
-    Route::post('/posts/update/{id}', [PostController::class,'update'])->middleware('contentOwner');
-    Route::post('/posts/delete/{id}', [PostController::class,'delete'])->middleware('contentOwner');
+    Route::patch('/posts/update/{id}', [PostController::class,'update'])->middleware('contentOwner');
+    Route::delete('/posts/delete/{id}', [PostController::class,'delete'])->middleware('contentOwner');
     Route::get('/me', [AuthController::class,'me']);
 
 });

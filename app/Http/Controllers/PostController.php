@@ -46,7 +46,7 @@ class PostController extends Controller
         $post->update($request->all());
         return new PostResource($post);
     }
-    public function destroy($id)
+    public function delete($id)
     {
         $post = post::findorfail($id);
         $post->delete();
