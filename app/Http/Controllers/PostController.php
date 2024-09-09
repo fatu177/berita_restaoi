@@ -42,10 +42,6 @@ class PostController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-        ]);
         $post = post::findorfail($id);
         $post->update($request->all());
         return new PostResource($post);
